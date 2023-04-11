@@ -17,4 +17,24 @@ samples, guidance on mobile development, and a full API reference.
 
 Help for this project-
 
-color Constructor - image.png
+color Constructor - https://stackoverflow.com/questions/67133798/flutter-how-to-create-constructor-in-my-style-class
+ex- class Style {
+  Color styleColor;
+  
+  Style(this.styleColor) : 
+    header = TextStyle(
+      color: styleColor,
+      fontSize: 24,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w700,
+    ),
+    title1 = TextStyle(
+      color: styleColor,
+      fontSize: 24,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w700,
+    );
+  
+  final TextStyle header;
+  final TextStyle title1;
+}
