@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import './resuable_card.dart';
+import './icon_content.dart';
+
+const bottomContainerHeight = 80.0;
+const activeCardColour = Color(0xFF1D1E33);
+const inactiveCardColour = Color(0xFF111328);
+const bottomContainerColour = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -21,13 +29,24 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: resuableContainer(
-                      styleColor: Color(0xFF1D1E33),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: resuableContainer(
+                        styleColor: activeCardColour,
+                        cardChild: resuableIcons(
+                          icon: FontAwesomeIcons.mars,
+                          label: 'MALE',
+                        ), // Column
+                      ),
                     ),
                   ),
                   Expanded(
                     child: resuableContainer(
-                      styleColor: Color(0xFF1D1E33),
+                      styleColor: activeCardColour,
+                      cardChild: resuableIcons(
+                        icon: FontAwesomeIcons.mars,
+                        label: 'FEMALE',
+                      ), // Colum ),
                     ),
                   ),
                 ],
@@ -38,7 +57,30 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: resuableContainer(
-                      styleColor: Color(0xFF1D1E33),
+                      styleColor: activeCardColour,
+                      cardChild: Center(
+                        child: Column(
+                          children: <Widget>[
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(FontAwesomeIcons.mars),
+                              iconSize: 80.0,
+                              color: Colors.white,
+                              //cart+ icon from FontAwesome
+                            ), // Icon
+                            SizedBox(
+                              height: 15.0,
+                            ), // SizedBox
+                            Text(
+                              'MALE',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xFF8D8E98),
+                              ), // TextStyle
+                            ) // Text
+                          ], // <Widget>[]
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -49,7 +91,30 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: resuableContainer(
-                      styleColor: Color(0xFF1D1E33),
+                      styleColor: activeCardColour,
+                      cardChild: Center(
+                        child: Column(
+                          children: <Widget>[
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(FontAwesomeIcons.mars),
+                              iconSize: 80.0,
+                              color: Colors.white,
+                              //cart+ icon from FontAwesome
+                            ), // Icon
+                            SizedBox(
+                              height: 15.0,
+                            ), // SizedBox
+                            Text(
+                              'MALE',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Color(0xFF8D8E98),
+                              ), // TextStyle
+                            ) // Text
+                          ], // <Widget>[]
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -62,25 +127,6 @@ class _InputPageState extends State<InputPage> {
         onPressed: () {},
         child: Icon(Icons.add),
       ),
-    );
-  }
-}
-
-class resuableContainer extends StatelessWidget {
-  // ignore: non_constant_identifier_names, use_key_in_widget_constructors
-  resuableContainer({required this.styleColor});
-  Color styleColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: styleColor,
-        borderRadius: BorderRadius.circular(10.0),
-      ), // BoxDecoration
-      height: 200.0,
-      width: 170.0,
     );
   }
 }
