@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-const labelTextStyle = TextStyle(
-  fontSize: 18.0,
-  color: Color(0xFF8D8E98),
-);
+import 'constants.dart';
 
 class resuableIcons extends StatelessWidget {
   const resuableIcons({required this.icon, required this.label});
@@ -27,7 +24,7 @@ class resuableIcons extends StatelessWidget {
           ), // SizedBox
           Text(
             label,
-            style: labelTextStyle, // TextStyle
+            style: kLabelTextStyle, // TextStyle
           ), // Text
         ], // <Widget>[]
       ),
